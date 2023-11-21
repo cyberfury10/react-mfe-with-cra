@@ -1,10 +1,10 @@
 import React from "react"
 import Header from "./header"
 
-function Home(props) {
+function Home({ isInMfeMode }) {
   return (
     <div>
-      <Header />
+      <Header isInMfeMode={isInMfeMode} />
       Home REACT APP
     </div>
   )

@@ -17,7 +17,7 @@ function App() {
           path="/mfe"
           element={
             <Router primary>
-              <AppPage default />
+              <AppPage default isInMfeMode/>
             </Router>
           }
         />

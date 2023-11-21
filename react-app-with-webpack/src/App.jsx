@@ -7,13 +7,13 @@ import { Router } from "@reach/router"
 import Home from "./components/home"
 import { Redirect } from "@reach/router"
 
-const App = () => (
+const App = ({ isInMfeMode = false }) => (
   <>
     <h1>App name: "react-app-with-webpack"</h1>
     <Router primary={true} noThrow={true}>
       <Redirect from="/" to="dashboard" noThrow={true} />
-      <Home path="dashboard" />
-      <Page1 path="dashboard/page1" />
+      <Home path="dashboard/" isInMfeMode={isInMfeMode} />
+      <Page1 path="dashboard/page1" isInMfeMode={isInMfeMode} />
     </Router>
   </>
 )
