@@ -1,21 +1,29 @@
 import React from "react"
-import { Button, TextBox, List, DropDown, Table } from "react_webpack_app/component"
+import { AppPage } from "react_webpack_app/component"
 
 import "./index.css"
+import { Route, Routes } from "react-router-dom"
+import Page1 from "./components/page1"
+import Home from "./components/home"
+import { Router } from "@reach/router"
 function App() {
   return (
     <>
       <h1> App name: "cra-with-craco"</h1>
-      <div className="cra-container">
-        <p> The contents here are loaded from <span style={{color: "green", fontWeight: "bold"}}>react-app-with-webpack</span></p>
-        <Button />
-        <TextBox />
-        <List />
-        <DropDown />
-        <Table />
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/page1" element={<Page1 />} />
+        <Route
+          path="/mfe"
+          element={
+            <Router primary>
+              <AppPage default />
+            </Router>
+          }
+        />
+      </Routes>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
